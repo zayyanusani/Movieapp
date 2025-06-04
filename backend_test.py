@@ -207,9 +207,9 @@ class MovieAppTester:
         success, response = self.run_test(
             "Create Watchlist",
             "POST",
-            "watchlists",
+            "watchlists?name=Test%20Watchlist&description=A%20test%20watchlist",
             200,
-            data={"name": "Test Watchlist", "description": "A test watchlist"}
+            data={}
         )
         if success and 'id' in response:
             self.watchlist_id = response['id']
